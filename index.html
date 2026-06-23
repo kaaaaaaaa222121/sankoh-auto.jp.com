@@ -4,103 +4,311 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>三興オート株式会社｜京都市上京区のカーライフサポート</title>
+  <meta name="description" content="三興オート株式会社は京都市上京区の自動車整備・車検・車両販売・リース・カッティング・保険代理店です。店舗移転のお知らせとサービス内容をご案内します。">
+
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", Arial, sans-serif;
       color: #1f2937;
-      background: #f5f7fb;
+      background: #f6f7f9;
       line-height: 1.8;
     }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     header {
-      background: rgba(10, 17, 34, .96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 18, 36, 0.96);
       color: white;
       padding: 14px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 20;
       box-shadow: 0 8px 24px rgba(0,0,0,.18);
     }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .06em; }
-    .brand img { width: 48px; height: 48px; object-fit: contain; }
-    nav a { margin-left: 22px; font-size: 14px; opacity: .92; }
-    nav a:hover { opacity: 1; color: #fca5a5; }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+
+    .header-logo img {
+      height: 46px;
+      width: auto;
+    }
+
+    nav a {
+      margin-left: 24px;
+      font-size: 14px;
+      opacity: .9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      color: #f87171;
+    }
 
     .hero {
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(120deg, rgba(8,15,31,.92), rgba(17,24,39,.78)),
-        url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80') center/cover;
       color: white;
-      padding: 105px 8% 95px;
+      padding: 120px 8% 105px;
+      background:
+        linear-gradient(90deg, rgba(5, 12, 28, .9), rgba(15, 23, 42, .72)),
+        url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80") center/cover;
     }
+
     .hero::after {
       content: "";
       position: absolute;
-      right: -80px;
-      bottom: -40px;
-      width: min(720px, 78vw);
-      height: 420px;
+      right: -120px;
+      top: 40px;
+      width: 620px;
+      height: 260px;
       background: url("main-logo.png") center/contain no-repeat;
       opacity: .12;
       pointer-events: none;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 900px; }
-    .hero-logo { width: min(430px, 90%); margin-bottom: 26px; filter: drop-shadow(0 12px 22px rgba(0,0,0,.35)); }
-    .hero small { display: inline-block; background: #dc2626; padding: 5px 14px; border-radius: 999px; font-weight: 700; margin-bottom: 18px; }
-    .hero h1 { font-size: clamp(34px, 5vw, 60px); line-height: 1.22; margin: 0 0 18px; }
-    .hero p { max-width: 730px; font-size: 18px; opacity: .95; }
-    .btns { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { padding: 12px 22px; border-radius: 8px; font-weight: 800; display: inline-block; }
-    .btn.red { background: #dc2626; color: white; }
-    .btn.white { background: white; color: #111827; }
 
-    section { padding: 72px 8%; }
-    .notice {
-      background: white;
-      margin: -38px 8% 0;
-      padding: 30px;
-      border-left: 7px solid #dc2626;
-      border-radius: 14px;
-      box-shadow: 0 14px 36px rgba(0,0,0,.1);
+    .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      max-width: 880px;
     }
-    .notice h2 { margin: 0 0 8px; color: #991b1b; }
-    .notice strong { color: #111827; }
 
-    .title { text-align: center; margin-bottom: 38px; }
-    .title h2 { font-size: 32px; margin: 0; color: #111827; }
-    .title p { color: #6b7280; margin: 8px 0 0; }
+    .badge {
+      display: inline-block;
+      background: #dc2626;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
 
-    .cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.18;
+      margin: 0 0 22px;
+      letter-spacing: .04em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 18px;
+      opacity: .95;
+    }
+
+    .hero-logo {
+      width: min(480px, 90%);
+      margin: 28px 0 0;
+      filter: drop-shadow(0 16px 24px rgba(0,0,0,.35));
+    }
+
+    .btns {
+      margin-top: 34px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .btn.red {
+      background: #dc2626;
+      color: white;
+    }
+
+    .btn.white {
+      background: white;
+      color: #111827;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,.2);
+    }
+
+    section {
+      padding: 78px 8%;
+    }
+
+    .notice {
+      position: relative;
+      background: white;
+      margin: -42px 8% 0;
+      padding: 34px;
+      border-left: 7px solid #dc2626;
+      border-radius: 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.12);
+      z-index: 5;
+    }
+
+    .notice h2 {
+      margin: 0 0 10px;
+      color: #991b1b;
+      font-size: 28px;
+    }
+
+    .notice strong {
+      color: #111827;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .title .en {
+      color: #dc2626;
+      font-weight: 800;
+      letter-spacing: .16em;
+      font-size: 13px;
+    }
+
+    .title h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      margin: 4px 0 6px;
+      color: #0f172a;
+    }
+
+    .title p {
+      color: #6b7280;
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
     .card {
       background: white;
-      padding: 28px 22px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
-      border: 1px solid #eef0f4;
+      padding: 30px 26px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.07);
+      transition: .25s;
+      border: 1px solid #eef2f7;
     }
-    .card h3 { margin: 10px 0 8px; color: #111827; font-size: 20px; }
-    .card span { font-size: 34px; }
-    .card p { margin-bottom: 0; color: #4b5563; }
 
-    .about { display: grid; grid-template-columns: 1.2fr .8fr; gap: 34px; align-items: center; }
-    .about-box { background: #111827; color: white; padding: 34px; border-radius: 16px; box-shadow: 0 12px 28px rgba(17,24,39,.18); }
-    .about-box h3 { margin-top: 0; }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0,0,0,.12);
+    }
 
-    table { width: 100%; border-collapse: collapse; background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,.05); }
-    th, td { padding: 16px; border-bottom: 1px solid #e5e7eb; text-align: left; }
-    th { width: 30%; background: #f3f4f6; color: #111827; }
+    .card span {
+      font-size: 38px;
+    }
+
+    .card h3 {
+      margin: 12px 0 8px;
+      font-size: 22px;
+      color: #0f172a;
+    }
+
+    .about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 36px;
+      align-items: center;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .about-text h2 {
+      font-size: 38px;
+      color: #0f172a;
+      margin: 0 0 16px;
+    }
+
+    .about-box {
+      background: linear-gradient(135deg, #111827, #0b1633);
+      color: white;
+      padding: 36px;
+      border-radius: 20px;
+      box-shadow: 0 16px 38px rgba(0,0,0,.18);
+    }
+
+    .about-box h3 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .company {
+      background: #f6f7f9;
+    }
+
+    table {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,.07);
+    }
+
+    th, td {
+      padding: 18px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    th {
+      width: 28%;
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .map {
+      background: white;
+    }
+
+    .map-wrap {
+      max-width: 1100px;
+      margin: auto;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 16px 42px rgba(0,0,0,.14);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      display: block;
+    }
 
     .contact {
       position: relative;
@@ -110,132 +318,316 @@
       text-align: center;
       padding: 90px 8%;
     }
+
     .contact::before {
       content: "";
       position: absolute;
       inset: 0;
       background: url("main-logo.png") center center no-repeat;
-      background-size: min(760px, 88%);
-      opacity: 0.07;
+      background-size: min(760px, 90%);
+      opacity: .06;
       z-index: 0;
     }
-    .contact > * { position: relative; z-index: 1; }
-    .contact h2 { font-size: 34px; margin: 0 0 12px; }
-    .tel { font-size: clamp(30px, 5vw, 46px); font-weight: 900; margin: 12px 0; color: #fff; letter-spacing: .04em; }
-    .contact-note { opacity: .88; }
 
-    footer { background: #0b1020; color: #9ca3af; text-align: center; padding: 24px; font-size: 13px; }
-
-    @media (max-width: 1000px) {
-      .cards { grid-template-columns: repeat(2, 1fr); }
-      .about { grid-template-columns: 1fr; }
+    .contact > * {
+      position: relative;
+      z-index: 1;
     }
-    @media (max-width: 700px) {
-      header { display: block; }
-      nav { margin-top: 12px; }
-      nav a { margin: 0 12px 0 0; }
-      .hero { padding: 78px 6%; }
-      section, header { padding-left: 6%; padding-right: 6%; }
-      .notice { margin-left: 6%; margin-right: 6%; padding: 24px; }
-      .cards { grid-template-columns: 1fr; }
-      th, td { display: block; width: 100%; }
-      th { border-bottom: none; }
+
+    .contact h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0 0 12px;
+    }
+
+    .tel {
+      display: inline-block;
+      font-size: clamp(32px, 5vw, 46px);
+      font-weight: 900;
+      margin: 18px 0;
+      color: #fff;
+      letter-spacing: .03em;
+    }
+
+    .floating-tel {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 200;
+      background: #dc2626;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(220,38,38,.35);
+    }
+
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        display: block;
+      }
+
+      nav {
+        margin-top: 12px;
+      }
+
+      nav a {
+        margin: 0 14px 0 0;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero::after {
+        opacity: .08;
+        right: -220px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header,
+      section,
+      .hero,
+      .contact {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .header-logo img {
+        height: 40px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .notice {
+        margin-left: 6%;
+        margin-right: 6%;
+        padding: 24px;
+      }
+
+      th, td {
+        display: block;
+        width: 100%;
+      }
+
+      th {
+        border-bottom: none;
+      }
+
+      .map iframe {
+        height: 360px;
+      }
+
+      .floating-tel {
+        left: 16px;
+        right: 16px;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <a class="brand" href="#top">
-      <img src="logo.png" alt="三興オート マーク" />
-      <span>三興オート株式会社</span>
-    </a>
-    <nav>
-      <a href="#service">サービス</a>
-      <a href="#about">会社概要</a>
-      <a href="#contact">お問い合わせ</a>
-    </nav>
-  </header>
 
-  <main id="top">
-    <div class="hero">
-      <div class="hero-content">
-        <img class="hero-logo" src="main-logo.png" alt="SANKO AUTO 三興オート" />
-        <small>京都市上京区のカーライフサポート</small>
-        <h1>車のことなら、<br>三興オートへ。</h1>
-        <p>車検・整備、車両販売、カーリース、自動車保険、カッティング施工まで。お客様のカーライフを幅広くサポートいたします。</p>
-        <div class="btns">
-          <a class="btn red" href="#contact">お問い合わせする</a>
-          <a class="btn white" href="#service">サービスを見る</a>
-        </div>
-      </div>
-    </div>
+<header>
+  <a href="#" class="header-logo">
+    <img src="logo.png" alt="三興オート株式会社 ロゴ">
+    <span>三興オート株式会社</span>
+  </a>
 
-    <div class="notice">
-      <h2>事務所・店舗移転のお知らせ</h2>
+  <nav>
+    <a href="#notice">移転のお知らせ</a>
+    <a href="#service">サービス</a>
+    <a href="#company">会社概要</a>
+    <a href="#access">アクセス</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">店舗移転のお知らせ</div>
+      <h1>車のことなら、<br>三興オートへ。</h1>
       <p>
-        平素より三興オート株式会社をご利用いただき、誠にありがとうございます。<br>
-        このたび弊社は、下記住所へ事務所・店舗を移転いたしました。新店舗でも、これまで以上に安心してご利用いただけるサービスをご提供してまいります。<br>
-        <strong>住所：</strong>京都市上京区一条通り油小路西入る西川端町558<br>
-        <strong>電話番号：</strong>075-431-4331　※電話・FAX番号に変更ございません。
+        京都市上京区で、自動車整備・車検・車両販売・リース・カッティング・保険代理店まで。
+        お客様のカーライフを幅広く、丁寧にサポートいたします。
       </p>
+
+      <img class="hero-logo" src="main-logo.png" alt="三興オート株式会社">
+
+      <div class="btns">
+        <a class="btn red" href="#contact">お問い合わせする</a>
+        <a class="btn white" href="#access">アクセスを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="notice" class="notice">
+    <h2>事務所・店舗移転のお知らせ</h2>
+    <p>
+      平素より三興オート株式会社をご利用いただき、誠にありがとうございます。<br>
+      このたび弊社は、建物の老朽化にともない下記住所へ事務所・店舗を移転いたしました。
+      新店舗でも、これまで以上に安心してご利用いただけるサービスをご提供してまいります。
+    </p>
+    <p>
+      <strong>新住所：</strong>〒602-0954 京都府京都市上京区一条通油小路西入西川端町558<br>
+      <strong>電話番号：</strong>075-431-4331<br>
+      ※電話・FAX番号に変更はございません。
+    </p>
+  </div>
+
+  <section id="service">
+    <div class="title">
+      <div class="en">SERVICE</div>
+      <h2>サービス内容</h2>
+      <p>車に関するご相談をまとめてサポートします。</p>
     </div>
 
-    <section id="service">
-      <div class="title">
-        <h2>サービス内容</h2>
-        <p>車に関するご相談をまとめてサポートします。</p>
+    <div class="cards">
+      <div class="card">
+        <span>🔧</span>
+        <h3>整備</h3>
+        <p>日常点検、修理、メンテナンスなど、安全な走行を支える整備に対応します。</p>
       </div>
-      <div class="cards">
-        <div class="card"><span>🔧</span><h3>車検・整備</h3><p>点検、整備、修理など安全な走行を支えるメンテナンスに対応します。</p></div>
-        <div class="card"><span>🚗</span><h3>車両販売</h3><p>新車・中古車のご相談から購入後のサポートまでお任せください。</p></div>
-        <div class="card"><span>📄</span><h3>カーリース</h3><p>法人・個人のお客様に合わせたカーリースをご提案します。</p></div>
-        <div class="card"><span>🛡️</span><h3>保険代理店</h3><p>万が一に備えた自動車保険のご相談も承ります。</p></div>
-        <div class="card"><span>✂️</span><h3>カッティング</h3><p>社名ステッカー、看板、車両マーキングなどの制作に対応します。</p></div>
+
+      <div class="card">
+        <span>🧾</span>
+        <h3>車検・板金</h3>
+        <p>車検、板金のご相談から必要な整備まで、安心してお任せいただけます。</p>
       </div>
-    </section>
 
-    <section id="about">
-      <div class="about">
-        <div>
-          <div class="title" style="text-align:left;margin-bottom:22px;">
-            <h2>三興オートについて</h2>
-            <p>地域に根ざした自動車サービス会社です。</p>
-          </div>
-          <p>
-            京都市上京区で、自動車整備・販売を中心に、保険、リース、カッティング施工まで幅広く対応しています。<br>
-            お客様に安心して車をご利用いただけるよう、丁寧でわかりやすい対応を大切にしています。
-          </p>
-        </div>
-        <div class="about-box">
-          <h3>こんな方におすすめ</h3>
-          <p>・車検や整備を相談したい<br>・車を購入、リースしたい<br>・社用車の管理を任せたい<br>・車両や看板に文字を入れたい</p>
-        </div>
+      <div class="card">
+        <span>🚗</span>
+        <h3>車両販売・買取</h3>
+        <p>新車・中古車のご相談から購入後のサポートまで丁寧に対応します。</p>
       </div>
-    </section>
 
-    <section>
-      <div class="title">
-        <h2>会社概要</h2>
+      <div class="card">
+        <span>📄</span>
+        <h3>リース</h3>
+        <p>法人・個人のお客様に合わせたカーリースをご提案します。下取車の査定も行います。</p>
       </div>
-      <table>
-        <tr><th>会社名</th><td>三興オート株式会社</td></tr>
-        <tr><th>設立</th><td>1965年</td></tr>
-        <tr><th>所在地</th><td>〒602-0925　京都市上京区一条通り油小路西入る西川端町558</td></tr>
-        <tr><th>電話番号</th><td>075-431-4331</td></tr>
-        <tr><th>事業内容</th><td>車検・整備、車両販売、カーリース、保険代理店、カッティング施工</td></tr>
-      </table>
-    </section>
 
-    <section id="contact" class="contact">
-      <h2>お問い合わせ</h2>
-      <p>車の整備・販売・リース・保険・カッティングのご相談はこちら</p>
-      <div class="tel">075-431-4331</div>
-      <p class="contact-note">営業時間 9:00〜17:30<br>定休日 土日・祝日</p>
-    </section>
-  </main>
+      <div class="card">
+        <span>✂️</span>
+        <h3>カッティング</h3>
+        <p>社名ステッカー、看板、車両マーキングなどの制作に対応します。</p>
+      </div>
 
-  <footer>
-    © 三興オート株式会社 All Rights Reserved.
-  </footer>
+      <div class="card">
+        <span>🛡️</span>
+        <h3>保険代理店</h3>
+        <p>万が一に備えた自動車保険のご相談も承ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>地域に根ざした<br>カーライフサポート</h2>
+        <p>
+          三興オート株式会社は、京都市上京区で自動車整備・販売を中心に、
+          リース、保険、カッティング施工まで幅広く対応しています。
+        </p>
+        <p>
+          お客様に安心して車をご利用いただけるよう、丁寧でわかりやすい対応を大切にしています。
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>こんな方におすすめ</h3>
+        <p>
+          ・車検や整備を相談したい<br>
+          ・車を購入、リースしたい<br>
+          ・社用車の管理を任せたい<br>
+          ・車両や看板に文字を入れたい<br>
+          ・自動車保険について相談したい
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="company" class="company">
+    <div class="title">
+      <div class="en">COMPANY</div>
+      <h2>会社概要</h2>
+    </div>
+
+    <table>
+      <tr>
+        <th>会社名</th>
+        <td>三興オート株式会社</td>
+      </tr>
+      <tr>
+        <th>設立</th>
+        <td>1965年</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒602-8221 京都府京都市上京区西堀川通り元誓願寺下ル堀川上之町839</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td>075-431-4331</td>
+      </tr>
+      <tr>
+        <th>事業内容</th>
+        <td>整備、車検、車両販売、リース、カッティング、保険代理店</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="access" class="map">
+    <div class="title">
+      <div class="en">ACCESS</div>
+      <h2>アクセス</h2>
+      <p>新店舗所在地</p>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=〒602-0954%20京都府京都市上京区一条通油小路西入西川端町558&output=embed"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>お問い合わせ</h2>
+    <p>車の整備・車検・販売・リース・保険・カッティングのご相談はこちら</p>
+    <a class="tel" href="tel:0754314331">075-431-4331</a>
+    <p>
+      営業時間 9:00〜17:30<br>
+      定休日 土日・祝日
+    </p>
+  </section>
+
+</main>
+
+<a class="floating-tel" href="tel:0754314331">電話する</a>
+
+<footer>
+  © 三興オート株式会社 All Rights Reserved.
+</footer>
+
 </body>
 </html>
